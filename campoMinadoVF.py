@@ -158,17 +158,17 @@ def perdeu():
                     pygame.display.update()
                 
     text = fontePerdeu.render('Você perdeu! :(', True, vermelho)
-    # copiando o texto para a superfície
+    # copia o texto para a superfície
     screen.blit(text, (size[0]//2-(text.get_rect().width//2),size[1]//2-(text.get_rect().height//2)))
     end()
 
 def ganhou():
+    # abrir todos os quadrados fechados
     for i in range(nq):
         for j in range(nq):
             if not((i, j) in abertos) and not(campo[i][j]):
                 atualizarNumeros(i, j, margem+(j*(lq+esp)), margem+(i*(lq+esp)), [])
     text = fonteGanhou.render('Você ganhou!!! :)', True, verdeClaro)
-    # copiando o texto para a superfície
     screen.blit(text, (size[0]//2-(text.get_rect().width//2),size[1]//2-(text.get_rect().height//2)))
     end()
 
